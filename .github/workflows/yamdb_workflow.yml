@@ -22,12 +22,7 @@ jobs:
       run: flake8 .
 
     - name: Test with pytest
-      run: |
-        pytest tests/test_docker_compose.py
-        pytest tests/test_readme.py
-        pytest tests/test_requirements.py
-        pytest tests/test_test_settings.py
-        pytest tests/test_yamdb_yml.py
+      run: pytest
       
   
   build_and_push_to_docker_hub:
