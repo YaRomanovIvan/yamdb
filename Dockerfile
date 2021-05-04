@@ -1,0 +1,8 @@
+FROM python:3.8.5
+ENV secret_key mysecretkey
+WORKDIR /code
+RUN apt update -y && apt upgrade -y && apt install nginx postgresql -y
+COPY requirements.txt /code
+RUN pip install -r requirements.txt
+COPY . /code
+CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000 
