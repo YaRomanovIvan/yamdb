@@ -6,7 +6,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - ./.env.template
   web:
     image: romanov5820/yamdb_final:v1
     restart: always
