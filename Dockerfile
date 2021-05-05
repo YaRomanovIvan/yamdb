@@ -1,7 +1,6 @@
 FROM python:3.8.5
 ENV secret_key mysecretkey
 WORKDIR /code
-RUN apt update -y && apt upgrade -y && apt install nginx postgresql -y
 COPY requirements.txt /code
 RUN pip install -r requirements.txt
 COPY . /code
