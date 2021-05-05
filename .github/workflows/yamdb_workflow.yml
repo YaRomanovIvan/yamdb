@@ -58,7 +58,8 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен паролем
-          run: docker-compose up -d
+      - name: build docker
+        run: docker-compose up -d
   
 
   send_message:
