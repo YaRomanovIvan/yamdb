@@ -58,8 +58,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен паролем
-          script: |
-            sudo docker stack deploy -c ~/yamdb_final/docker-compose.yaml STACK
+          run: docker-compose up -d
   
 
   send_message:
