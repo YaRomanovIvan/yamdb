@@ -59,7 +59,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен паролем
           script: |
-            sudo docker stack deploy -c docker-compose.yml
+            sudo docker stack deploy -c docker-compose.yml STACK
   
 
   send_message:
