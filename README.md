@@ -7,15 +7,17 @@
 # Стек технологий  
   ***nginx, gunicorn, Django REST, python, docker***
 # Установка
-1. Клонируем репозиторий:  
+1. Обновляем пакеты, устанавливаем postgres и nginx:
+  ***sudo apt update -y && apt upgrade -y && apt install nginx postgresql -y*** 
+2. Клонируем репозиторий:  
   ***git clone***  
-2. Создаем контейнер:  
+3. Создаем контейнер:  
   ***docker-compose up -d***  
 4. Выполняем миграции:  
   ***docker-compose exec web python manage.py migrate --noinput***  
-4. Создаем суперпользовотеля:  
+5. Создаем суперпользовотеля:  
   ***docker-compose exec web python manage.py createsuperuser***  
-5. Собираем статику:  
+6. Собираем статику:  
   ***docker-compose exec web python manage.py collectstatic --no-input***  
-6. Загружаем данные:  
+7. Загружаем данные:  
   ***docker-compose exec web python manage.py loaddata fixtures.json***  
