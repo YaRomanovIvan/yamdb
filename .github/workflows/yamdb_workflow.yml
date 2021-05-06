@@ -60,7 +60,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен паролем
           script: |
             cd yamdb_final
-            sudo docker pull romanov5820/yamdb_final
+            sudo docker pull romanov5820/yamdb_final:latest
             sudo docker-compose stop
             sudo docker-compose up -d
   
